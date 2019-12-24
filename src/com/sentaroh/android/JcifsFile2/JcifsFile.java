@@ -96,7 +96,7 @@ public class JcifsFile {
             } else if (mSmbLevel==JCIFS_FILE_SMB212) {
                 return mSmb212File.exists();
             } else 
-            	throw (new JcifsException("Unknown SMB Level"));
+            	throw (new JcifsException(JcifsException.NT_STATUS_DESC_INVALID_JCIFS_LEVEL, JcifsException.NT_STATUS_INT_INVALID_JCIFS_LEVEL));
         } catch (jcifsng212.smb.SmbException e) {
             throw (new JcifsException(e, e.getNtStatus(), e.getCause()));
         } catch (jcifs.smb.SmbException e) {
@@ -112,7 +112,7 @@ public class JcifsFile {
             } else if (mSmbLevel==JCIFS_FILE_SMB212) {
             	mSmb212File.delete();
             } else 
-            	throw (new JcifsException("Unknown SMB Level"));
+            	throw (new JcifsException(JcifsException.NT_STATUS_DESC_INVALID_JCIFS_LEVEL, JcifsException.NT_STATUS_INT_INVALID_JCIFS_LEVEL));
         } catch (jcifsng212.smb.SmbException e) {
             throw (new JcifsException(e, e.getNtStatus(), e.getCause()));
         } catch (jcifs.smb.SmbException e) {
@@ -128,7 +128,7 @@ public class JcifsFile {
             } else if (mSmbLevel==JCIFS_FILE_SMB212) {
             	mSmb212File.mkdir();
             } else 
-            	throw (new JcifsException("Unknown SMB Level"));
+            	throw (new JcifsException(JcifsException.NT_STATUS_DESC_INVALID_JCIFS_LEVEL, JcifsException.NT_STATUS_INT_INVALID_JCIFS_LEVEL));
         } catch (jcifsng212.smb.SmbException e) {
             throw (new JcifsException(e, e.getNtStatus(), e.getCause()));
         } catch (jcifs.smb.SmbException e) {
@@ -143,7 +143,7 @@ public class JcifsFile {
             } else if (mSmbLevel==JCIFS_FILE_SMB212) {
             	mSmb212File.mkdirs();
             } else 
-            	throw (new JcifsException("Unknown SMB Level"));
+            	throw (new JcifsException(JcifsException.NT_STATUS_DESC_INVALID_JCIFS_LEVEL, JcifsException.NT_STATUS_INT_INVALID_JCIFS_LEVEL));
         } catch (jcifsng212.smb.SmbException e) {
             throw (new JcifsException(e, e.getNtStatus(), e.getCause()));
         } catch (jcifs.smb.SmbException e) {
@@ -158,7 +158,7 @@ public class JcifsFile {
             } else if (mSmbLevel==JCIFS_FILE_SMB212) {
             	return mSmb212File.getAttributes();
             } else 
-            	throw (new JcifsException("Unknown SMB Level"));
+            	throw (new JcifsException(JcifsException.NT_STATUS_DESC_INVALID_JCIFS_LEVEL, JcifsException.NT_STATUS_INT_INVALID_JCIFS_LEVEL));
         } catch (jcifsng212.smb.SmbException e) {
             throw (new JcifsException(e, e.getNtStatus(), e.getCause()));
         } catch (jcifs.smb.SmbException e) {
@@ -173,7 +173,7 @@ public class JcifsFile {
             } else if (mSmbLevel==JCIFS_FILE_SMB212) {
             	return mSmb212File.getInputStream();
             } else 
-            	throw (new JcifsException("Unknown SMB Level"));
+            	throw (new JcifsException(JcifsException.NT_STATUS_DESC_INVALID_JCIFS_LEVEL, JcifsException.NT_STATUS_INT_INVALID_JCIFS_LEVEL));
         } catch (jcifsng212.smb.SmbException e) {
             throw (new JcifsException(e, e.getNtStatus(), e.getCause()));
         } catch (jcifs.smb.SmbException e) {
@@ -191,7 +191,7 @@ public class JcifsFile {
             } else if (mSmbLevel==JCIFS_FILE_SMB212) {
             	return mSmb212File.getOutputStream();
             } else 
-            	throw (new JcifsException("Unknown SMB Level"));
+            	throw (new JcifsException(JcifsException.NT_STATUS_DESC_INVALID_JCIFS_LEVEL, JcifsException.NT_STATUS_INT_INVALID_JCIFS_LEVEL));
         } catch (jcifsng212.smb.SmbException e) {
             throw (new JcifsException(e, e.getNtStatus(), e.getCause()));
         } catch (jcifs.smb.SmbException e) {
@@ -208,7 +208,7 @@ public class JcifsFile {
         } else if (mSmbLevel==JCIFS_FILE_SMB212) {
         	mSmb212File.close();
         } else 
-        	throw (new JcifsException("Unknown SMB Level"));
+        	throw (new JcifsException(JcifsException.NT_STATUS_DESC_INVALID_JCIFS_LEVEL, JcifsException.NT_STATUS_INT_INVALID_JCIFS_LEVEL));
     }
 
     public void connect() throws JcifsException {
@@ -218,7 +218,7 @@ public class JcifsFile {
             } else if (mSmbLevel==JCIFS_FILE_SMB212) {
             	mSmb212File.connect();
             } else 
-            	throw (new JcifsException("Unknown SMB Level"));
+            	throw (new JcifsException(JcifsException.NT_STATUS_DESC_INVALID_JCIFS_LEVEL, JcifsException.NT_STATUS_INT_INVALID_JCIFS_LEVEL));
         } catch (jcifsng212.smb.SmbException e) {
             throw (new JcifsException(e, e.getNtStatus(), e.getCause()));
         } catch (jcifs.smb.SmbException e) {
@@ -235,7 +235,7 @@ public class JcifsFile {
             } else if (mSmbLevel==JCIFS_FILE_SMB212) {
             	mSmb212File.createNewFile();
             } else 
-            	throw (new JcifsException("Unknown SMB Level"));
+            	throw (new JcifsException(JcifsException.NT_STATUS_DESC_INVALID_JCIFS_LEVEL, JcifsException.NT_STATUS_INT_INVALID_JCIFS_LEVEL));
         } catch (jcifsng212.smb.SmbException e) {
             throw (new JcifsException(e, e.getNtStatus(), e.getCause()));
         } catch (jcifs.smb.SmbException e) {
@@ -286,7 +286,7 @@ public class JcifsFile {
             } else if (mSmbLevel==JCIFS_FILE_SMB212) {
             	return mSmb212File.getType();
             } else 
-            	throw (new JcifsException("Unknown SMB Level"));
+            	throw (new JcifsException(JcifsException.NT_STATUS_DESC_INVALID_JCIFS_LEVEL, JcifsException.NT_STATUS_INT_INVALID_JCIFS_LEVEL));
         } catch (jcifsng212.smb.SmbException e) {
             throw (new JcifsException(e, e.getNtStatus(), e.getCause()));
         } catch (jcifs.smb.SmbException e) {
@@ -319,7 +319,7 @@ public class JcifsFile {
             } else if (mSmbLevel==JCIFS_FILE_SMB212) {
             	return mSmb212File.canRead();
             } else 
-            	throw (new JcifsException("Unknown SMB Level"));
+            	throw (new JcifsException(JcifsException.NT_STATUS_DESC_INVALID_JCIFS_LEVEL, JcifsException.NT_STATUS_INT_INVALID_JCIFS_LEVEL));
         } catch (jcifsng212.smb.SmbException e) {
             throw (new JcifsException(e, e.getNtStatus(), e.getCause()));
         } catch (jcifs.smb.SmbException e) {
@@ -334,7 +334,7 @@ public class JcifsFile {
             } else if (mSmbLevel==JCIFS_FILE_SMB212) {
             	return mSmb212File.canWrite();
             } else 
-            	throw (new JcifsException("Unknown SMB Level"));
+            	throw (new JcifsException(JcifsException.NT_STATUS_DESC_INVALID_JCIFS_LEVEL, JcifsException.NT_STATUS_INT_INVALID_JCIFS_LEVEL));
         } catch (jcifsng212.smb.SmbException e) {
             throw (new JcifsException(e, e.getNtStatus(), e.getCause()));
         } catch (jcifs.smb.SmbException e) {
@@ -349,7 +349,7 @@ public class JcifsFile {
             } else if (mSmbLevel==JCIFS_FILE_SMB212) {
             	return mSmb212File.isDirectory();
             } else 
-            	throw (new JcifsException("Unknown SMB Level"));
+            	throw (new JcifsException(JcifsException.NT_STATUS_DESC_INVALID_JCIFS_LEVEL, JcifsException.NT_STATUS_INT_INVALID_JCIFS_LEVEL));
         } catch (jcifsng212.smb.SmbException e) {
             throw (new JcifsException(e, e.getNtStatus(), e.getCause()));
         } catch (jcifs.smb.SmbException e) {
@@ -364,7 +364,7 @@ public class JcifsFile {
             } else if (mSmbLevel==JCIFS_FILE_SMB212) {
             	return mSmb212File.isFile();
             } else 
-            	throw (new JcifsException("Unknown SMB Level"));
+            	throw (new JcifsException(JcifsException.NT_STATUS_DESC_INVALID_JCIFS_LEVEL, JcifsException.NT_STATUS_INT_INVALID_JCIFS_LEVEL));
         } catch (jcifsng212.smb.SmbException e) {
             throw (new JcifsException(e, e.getNtStatus(), e.getCause()));
         } catch (jcifs.smb.SmbException e) {
@@ -379,7 +379,7 @@ public class JcifsFile {
             } else if (mSmbLevel==JCIFS_FILE_SMB212) {
             	return mSmb212File.isHidden();
             } else 
-            	throw (new JcifsException("Unknown SMB Level"));
+            	throw (new JcifsException(JcifsException.NT_STATUS_DESC_INVALID_JCIFS_LEVEL, JcifsException.NT_STATUS_INT_INVALID_JCIFS_LEVEL));
         } catch (jcifsng212.smb.SmbException e) {
             throw (new JcifsException(e, e.getNtStatus(), e.getCause()));
         } catch (jcifs.smb.SmbException e) {
@@ -394,7 +394,7 @@ public class JcifsFile {
             } else if (mSmbLevel==JCIFS_FILE_SMB212) {
             	return mSmb212File.length();
             } else 
-            	throw (new JcifsException("Unknown SMB Level"));
+            	throw (new JcifsException(JcifsException.NT_STATUS_DESC_INVALID_JCIFS_LEVEL, JcifsException.NT_STATUS_INT_INVALID_JCIFS_LEVEL));
         } catch (jcifsng212.smb.SmbException e) {
             throw (new JcifsException(e, e.getNtStatus(), e.getCause()));
         } catch (jcifs.smb.SmbException e) {
@@ -409,7 +409,7 @@ public class JcifsFile {
             } else if (mSmbLevel==JCIFS_FILE_SMB212) {
             	return mSmb212File.list();
             } else 
-            	throw (new JcifsException("Unknown SMB Level"));
+            	throw (new JcifsException(JcifsException.NT_STATUS_DESC_INVALID_JCIFS_LEVEL, JcifsException.NT_STATUS_INT_INVALID_JCIFS_LEVEL));
         } catch (jcifsng212.smb.SmbException e) {
             throw (new JcifsException(e, e.getNtStatus(), e.getCause()));
         } catch (jcifs.smb.SmbException e) {
@@ -434,7 +434,7 @@ public class JcifsFile {
                     result[i] = new JcifsFile(smb212Files[i], mAuth);
                 return result;
             } else 
-            	throw (new JcifsException("Unknown SMB Level"));
+            	throw (new JcifsException(JcifsException.NT_STATUS_DESC_INVALID_JCIFS_LEVEL, JcifsException.NT_STATUS_INT_INVALID_JCIFS_LEVEL));
         } catch (jcifsng212.smb.SmbException e) {
             throw (new JcifsException(e, e.getNtStatus(), e.getCause()));
         } catch (jcifs.smb.SmbException e) {
@@ -453,7 +453,7 @@ public class JcifsFile {
                     throw new JcifsException("Null SMB212 file specified.");
                 else mSmb212File.renameTo(d.getSmb212File());
             } else 
-            	throw (new JcifsException("Unknown SMB Level"));
+            	throw (new JcifsException(JcifsException.NT_STATUS_DESC_INVALID_JCIFS_LEVEL, JcifsException.NT_STATUS_INT_INVALID_JCIFS_LEVEL));
         } catch (jcifsng212.smb.SmbException e) {
             throw (new JcifsException(e, e.getNtStatus(), e.getCause()));
         } catch (jcifs.smb.SmbException e) {
@@ -473,7 +473,7 @@ public class JcifsFile {
             } else if (mSmbLevel==JCIFS_FILE_SMB212) {
             	mSmb212File.setLastModified(lm);
             } else 
-            	throw (new JcifsException("Unknown SMB Level"));
+            	throw (new JcifsException(JcifsException.NT_STATUS_DESC_INVALID_JCIFS_LEVEL, JcifsException.NT_STATUS_INT_INVALID_JCIFS_LEVEL));
         } catch (jcifsng212.smb.SmbException e) {
             throw (new JcifsException(e, e.getNtStatus(), e.getCause()));
         } catch (jcifs.smb.SmbException e) {
@@ -488,7 +488,7 @@ public class JcifsFile {
             } else if (mSmbLevel==JCIFS_FILE_SMB212) {
             	return mSmb212File.lastModified();
             } else 
-            	throw (new JcifsException("Unknown SMB Level"));
+            	throw (new JcifsException(JcifsException.NT_STATUS_DESC_INVALID_JCIFS_LEVEL, JcifsException.NT_STATUS_INT_INVALID_JCIFS_LEVEL));
         } catch (jcifsng212.smb.SmbException e) {
             throw (new JcifsException(e, e.getNtStatus(), e.getCause()));
         } catch (jcifs.smb.SmbException e) {

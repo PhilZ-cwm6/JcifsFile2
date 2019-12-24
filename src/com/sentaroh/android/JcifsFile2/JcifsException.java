@@ -28,6 +28,9 @@ public class JcifsException extends Exception {
     private Throwable mException = null;
     private int mNtStatus = 0;
     private String mMessage = null;
+    
+    public static final int NT_STATUS_INT_INVALID_JCIFS_LEVEL=0xfffffffe;
+    public static final String NT_STATUS_DESC_INVALID_JCIFS_LEVEL="INVALID JCIFS LEVEL";
 
     public JcifsException(Throwable e, int nt_status, Throwable cause) {
         mException = new Exception(e.getMessage(), cause);
@@ -41,6 +44,12 @@ public class JcifsException extends Exception {
         mException = new Exception(msg);
         mMessage = msg;
         mNtStatus = -1;
+    }
+
+    public JcifsException(String msg, int nt_status) {
+        mException = new Exception(msg);
+        mMessage = msg;
+        mNtStatus =nt_status;
     }
 
     public int getNtStatus() {
