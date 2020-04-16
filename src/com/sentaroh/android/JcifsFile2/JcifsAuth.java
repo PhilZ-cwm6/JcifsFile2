@@ -26,32 +26,32 @@ OTHER DEALINGS IN THE SOFTWARE.
 import java.util.Properties;
 
 public class JcifsAuth {
-    final static public int JCIFS_FILE_SMB1 = 1;
-    final static public int JCIFS_FILE_SMB214 = 2;
+    final static public String JCIFS_FILE_SMB1 = "SMBv1";
+    final static public String JCIFS_FILE_SMB23 = "SMBv2/3";
     private jcifs.smb.NtlmPasswordAuthentication mSmb1Auth = null;
     private jcifsng214.CIFSContext mSmb214Auth = null;
-    private int mSmbLevel = JCIFS_FILE_SMB1;
+    private String mSmbLevel = JCIFS_FILE_SMB1;
 
     private String mDomain = null, mUserName = null, mUserPass = null;
 
     /**
      * SMB1 or SMB2 Constructor
      *
-     * @param smb1   1 is use jcifs-1.3.17, 2 is jcifs-ng
+     * @param smb1   		SMB1 or SMB23
      * @param domain A domain name
      * @param user   A user name
      * @param pass   A password for user
      * @throws JcifsException
      */
     @SuppressWarnings("deprecation")
-    public JcifsAuth(int smb_level, String domain, String user, String pass) {
+    public JcifsAuth(String smb_level, String domain, String user, String pass) {
         mSmbLevel = smb_level;
         mDomain = domain;
         mUserName = user;
         mUserPass = pass;
         if (mSmbLevel==JCIFS_FILE_SMB1) {
             mSmb1Auth = new jcifs.smb.NtlmPasswordAuthentication(domain, user, pass);
-        } else if (mSmbLevel==JCIFS_FILE_SMB214) {
+        } else if (mSmbLevel==JCIFS_FILE_SMB23) {
             try {
                 Properties prop = new Properties();
                 prop.setProperty("jcifs.smb.client.minVersion", "SMB202");
@@ -68,7 +68,7 @@ public class JcifsAuth {
     /**
      * SMB2 Constructor
      *
-     * @param smb1   		1 is use jcifs-1.3.17, 2 is jcifs-ng
+     * @param smblevel 		 SMB1 or SMB23
      * @param domain        A domain name
      * @param user          A user name
      * @param pass          A password for user
@@ -76,7 +76,7 @@ public class JcifsAuth {
      * @throws JcifsException
      */
     @SuppressWarnings("deprecation")
-    public JcifsAuth(int smb_level, String domain, String user, String pass, boolean ipc_signing_enforced) {
+    public JcifsAuth(String smb_level, String domain, String user, String pass, boolean ipc_signing_enforced) {
         mSmbLevel = smb_level;
         mDomain = domain;
         mUserName = user;
@@ -111,7 +111,7 @@ public class JcifsAuth {
      * @throws JcifsException
      */
     @SuppressWarnings("deprecation")
-    public JcifsAuth(int smb_level, String domain, String user, String pass, boolean ipc_signing_enforced, boolean use_smb2_nego) {
+    public JcifsAuth(String smb_level, String domain, String user, String pass, boolean ipc_signing_enforced, boolean use_smb2_nego) {
         mSmbLevel = smb_level;
         mDomain = domain;
         mUserName = user;
@@ -150,7 +150,7 @@ public class JcifsAuth {
      * @throws JcifsException
      */
     @SuppressWarnings("deprecation")
-    public JcifsAuth(int smb_level, String domain, String user, String pass, boolean ipc_signing_enforced, String min_version, String max_version) {
+    public JcifsAuth(String smb_level, String domain, String user, String pass, boolean ipc_signing_enforced, String min_version, String max_version) {
         mSmbLevel = smb_level;
         mDomain = domain;
         mUserName = user;
@@ -174,16 +174,16 @@ public class JcifsAuth {
         }
     }
 
-    public int getSmbLevel() {
+    public String getSmbLevel() {
         return mSmbLevel;
     }
 
     public boolean isSmb1() {
-        return mSmbLevel==JCIFS_FILE_SMB1;
+        return mSmbLevel.equals(JCIFS_FILE_SMB1);
     }
 
     public boolean isSmb214() {
-        return mSmbLevel==JCIFS_FILE_SMB214;
+        return mSmbLevel.equals(JCIFS_FILE_SMB23);
     }
 
     public jcifs.smb.NtlmPasswordAuthentication getSmb1Auth() {

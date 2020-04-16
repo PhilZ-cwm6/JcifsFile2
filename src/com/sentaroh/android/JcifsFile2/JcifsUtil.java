@@ -67,10 +67,10 @@ public class JcifsUtil {
         return result;
     }
 
-    final static public String getSmbHostIpAddressByHostName(int smb_level, String hn) {
-        if (smb_level==JcifsAuth.JCIFS_FILE_SMB1) {
+    final static public String getSmbHostIpAddressByHostName(String smb_level, String hn) {
+        if (smb_level.equals(JcifsAuth.JCIFS_FILE_SMB1)) {
             return getSmbHostIpAddressFromNameSmb1(hn);
-        } else if (smb_level==JcifsAuth.JCIFS_FILE_SMB214) {
+        } else if (smb_level.equals(JcifsAuth.JCIFS_FILE_SMB23)) {
             return getSmbHostIpAddressFromNameSmb214(hn);
         }
         return null;
@@ -121,10 +121,10 @@ public class JcifsUtil {
         return reachable;
     }
 
-    final static public String getSmbHostNameByAddress(int smb_level, String address) {
-        if (smb_level==JcifsAuth.JCIFS_FILE_SMB1) {
+    final static public String getSmbHostNameByAddress(String smb_level, String address) {
+        if (smb_level.equals(JcifsAuth.JCIFS_FILE_SMB1)) {
             return getSmbHostNameFromAddressSmb1(address);
-        } else if (smb_level==JcifsAuth.JCIFS_FILE_SMB214) {
+        } else if (smb_level.equals(JcifsAuth.JCIFS_FILE_SMB23)) {
             return getSmbHostNameFromAddressSmb214(address);
         }
         return null;
@@ -179,10 +179,10 @@ public class JcifsUtil {
         return srv_name;
     }
 
-    final static public boolean isNetbiosAddress(int smb_level, String address) {
-        if (smb_level==JcifsAuth.JCIFS_FILE_SMB1) {
+    final static public boolean isNetbiosAddress(String smb_level, String address) {
+        if (smb_level.equals(JcifsAuth.JCIFS_FILE_SMB1)) {
             return isNbtAddressActiveSmb1(address);
-        } else if (smb_level==JcifsAuth.JCIFS_FILE_SMB214) {
+        } else if (smb_level.equals(JcifsAuth.JCIFS_FILE_SMB23)) {
             return isNbtAddressActiveSmb214(address);
         }
         return false;
